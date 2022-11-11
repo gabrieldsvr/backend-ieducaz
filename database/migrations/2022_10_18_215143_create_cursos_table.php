@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('nivel');
             $table->timestamps();
             $table->boolean('status')->default(true);
-
         });
     }
 
