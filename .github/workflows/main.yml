@@ -20,6 +20,7 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/vendor/**
             .htaccess
             .env
             composer.json
@@ -27,5 +28,9 @@ jobs:
             composer.phar
             **/config/app.php
             **/config/debugbar.php
+      - name: Install dependencies
+        uses: php-actions/composer@v6
+        with:
+        command: composer install
 
 
