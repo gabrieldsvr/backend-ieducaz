@@ -24,9 +24,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('alunos', array(AlunosApiController::class, 'index'));
 
-Route::get('cursos', array(CursosApiController::class, 'index'));
-Route::post('cursos', array(CursosApiController::class, 'store'));
-
+//Route::get('cursos', array(CursosApiController::class, 'index'));
+//Route::post('cursos', array(CursosApiController::class, 'store'));
+//Route::get('cursos/', array(CursosApiController::class, 'store'));
+Route::resources([
+    'cursos' => CursosApiController::class
+]);
 
 Route::get('turmas', array(TurmasApiController::class, 'index'));
 Route::post('turmas', array(TurmasApiController::class, 'store'));
