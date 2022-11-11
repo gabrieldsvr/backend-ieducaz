@@ -22,7 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('imoveis/{uuid}', array(ImovelApiController::class, 'index'));
 Route::get('alunos', array(AlunosApiController::class, 'index'));
 
 Route::get('cursos', array(CursosApiController::class, 'index'));
