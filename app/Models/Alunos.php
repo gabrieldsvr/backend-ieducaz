@@ -23,8 +23,9 @@ class Alunos extends Model
      *
      * @return Alunos
      */
-    public static function getAll(){
-        return Alunos::all();
+    static function all($columns = ['*'])
+    {
+        return parent::where('status',1)->get();
     }
 
 

@@ -18,4 +18,8 @@ class Turmas extends Model
 
     protected $table = 'turmas';
 
+    static function all($columns = ['*'])
+    {
+        return parent::where('status',1)->get();
+    }
 }
