@@ -81,11 +81,16 @@ class CursosApiController extends Controller
     public function destroy(Cursos $curso)
     {
 
-        $curso->delete();
-        return response()->json([
-            "message" => $curso,
-            "status"
-        ]);
+        try {
+            $curso->delete();
+            return response()->json([
+                "message" => "Curso deletado com sucesso!"
+            ],202);
+        } catch (\Exception $exception) {
+            return response()->json([
+                "message" => $exception
+            ], 406);
+        }
     }
 
 }
